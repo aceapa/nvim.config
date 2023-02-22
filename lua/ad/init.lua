@@ -1,7 +1,7 @@
 require('ad.patch')
-local isinstalled = require('ad/install')
-if isinstalled then
+local status, _ = pcall(require, "ad/install")
+if status then
 	require('ad.settings')
 	require('ad.remap')
-	require('ad.packer')
+--	require('ad.packer')
 end
