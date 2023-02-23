@@ -1,4 +1,5 @@
-require'nvim-treesitter.configs'.setup {
+local nvim_treesitter = require('nvim-treesitter.configs')
+nvim_treesitter.setup {
   -- A list of parser names, or "all"
   ensure_installed = { "help", "python", "c", "lua"},
 
