@@ -27,4 +27,13 @@ use {
 		  {'rafamadriz/friendly-snippets'},
 	  }
   }
+use {
+		'nvim-telescope/telescope.nvim', tag = '0.1.1',
+		 -- or                            , branch = '0.1.x',
+		 requires = { {'nvim-lua/plenary.nvim'} }
+}
+use("theprimeagen/harpoon")
+use("theprimeagen/refactoring.nvim")
+use("mbbill/undotree")
+use("tpope/vim-fugitive")
 end)
