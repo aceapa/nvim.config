@@ -3,8 +3,7 @@ local map = function(m, lhs, rhs)
     local opts = {remap = false, silent = true}
     vim.keymap.set(m, lhs, rhs, opts)
 end
-
- -- LSP actions 
+-- LSP actions 
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
 map('n', 'cd', '<cmd>lua vim.lsp.buf.definition()<cr>')
 map('n', 'cD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
@@ -20,8 +19,13 @@ map('n', 'dl', '<cmd>lua vim.diagnostic.open_float()<cr>')
 map('n', 'dp', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
 map('n', 'dn', '<cmd>lua vim.diagnostic.goto_next()<cr>')
 map("v", "J", ":m '>+1<CR>gv=gv")
+-- Miscellaneous
 map("v", "K", ":m '<-2<CR>gv=gv")
 map("n", "<leader>pv", vim.cmd.Ex)
 map("n", "<C-s>", ':w<CR>')
 map("n", "<leader>y", '"+y')
 map("v", "<leader>y", '"+y')
+map("n", "<C-a>", 'ggVG')
+map("n", "<C-g>", ':! git add % <cr><cr>')
+map("n", "<leader><left>", '<C-w>h')
+map("n", "<leader><right>", '<C-w>l')
