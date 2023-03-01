@@ -1,8 +1,8 @@
 vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
-use 'wbthomason/packer.nvim'
-use 'folke/tokyonight.nvim'
-use 'rose-pine/neovim'
+use('wbthomason/packer.nvim')
+use('folke/tokyonight.nvim')
+use('rose-pine/neovim')
 use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
 -- use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 use {
@@ -40,4 +40,5 @@ use("theprimeagen/harpoon")
 use("theprimeagen/refactoring.nvim")
 use("mbbill/undotree")
 use("tpope/vim-fugitive")
+use("folke/which-key.nvim")
 end)
