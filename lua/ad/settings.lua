@@ -1,6 +1,5 @@
 local opt = vim.opt
-vim.o.relativenumber = true
-vim.o.number = true
+local o = vim.opt
 vim.cmd.colorscheme('rose-pine')
 vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
 vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
@@ -19,3 +18,9 @@ opt.signcolumn = "yes"
 opt.termguicolors = true
 opt.updatetime = 50
 opt.colorcolumn = "80"
+-- cursor settings: highlight relativenumber set color to pink
+vim.cmd('hi CursorLineNr guifg=#af00af')
+o.relativenumber = true
+o.number = true
+o.cursorlineopt = "number"
+o.cursorline = true
