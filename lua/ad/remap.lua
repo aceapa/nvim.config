@@ -1,4 +1,6 @@
-vim.g.mapleader = " "
+local g = vim.g
+g.mapleader = " "
+g.maplocalleader = " "
 local map = function(m, lhs, rhs)
     local opts = {remap = false, silent = true}
     vim.keymap.set(m, lhs, rhs, opts)
