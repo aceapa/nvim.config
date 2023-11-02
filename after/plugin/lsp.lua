@@ -1,11 +1,18 @@
 local lsp = require('lsp-zero')
-lsp.preset({
-  name = 'minimal',
-  set_lsp_keymaps = true,
-  manage_nvim_cmp = true,
-  suggest_lsp_servers = false,
-})
--- (Optional) Configure lua language server for neovim
-lsp.nvim_workspace()
 
-lsp.setup()
+lsp.on_attach(function(client, bufnr)
+  -- see :help lsp-zero-keybindings
+  -- to learn the available actions
+  lsp.default_keymaps({buffer = bufnr})
+end)
+require('mason').setup({})
+require('mason-lspconfig').setup({})
+local lua_opts ={ settings = {
+    Lua = {
+      hint = {
+        enable = true,
+      },
+    },
+  },
+}
+require('lspconfig').lua_ls.setup(lua_opts)

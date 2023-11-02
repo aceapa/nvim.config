@@ -54,6 +54,7 @@ packer.startup(function(use)
 	use("mbbill/undotree")
 	use("tpope/vim-fugitive")
 	use("folke/which-key.nvim")
+	use("mfussenegger/nvim-dap")
 	if packer_bootstrap then
 		packer.sync()
 	end
