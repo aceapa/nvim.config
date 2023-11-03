@@ -32,3 +32,5 @@ map("n", "<C-a>", 'ggVG')
 map("n", "<C-g>", ':! git add % <cr><cr>')
 map("n", "<leader><left>", '<C-w>h')
 map("n", "<leader><right>", '<C-w>l')
+-- Main
+map("n", "v", "<C-v>") -- this will remap v to start visual block
