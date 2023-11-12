@@ -1,6 +1,6 @@
 local lsp = require('lsp-zero')
 
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(_, bufnr)
   -- see :help lsp-zero-keybindings
   -- to learn the available actions
   lsp.default_keymaps({buffer = bufnr})
@@ -12,6 +12,9 @@ local lua_opts ={ settings = {
       hint = {
         enable = true,
       },
+      diagnostics = {
+          globals = {'vim'},
+        }
     },
   },
 }
