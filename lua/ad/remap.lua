@@ -16,7 +16,7 @@ map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
 map('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>')
 map('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
 map('x', '<F4>', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
-map('n', '<leader>h', '<cmd>lua vim.lsp.inlay_hint(0, true)<cr>')
+map('n', '<leader>h', '<cmd>lua vim.lsp.inlay_hint.enable()<cr>')
 -- Diagnostics 
 map('n', 'dl', '<cmd>lua vim.diagnostic.open_float()<cr>')
 map('n', 'dp', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
@@ -33,4 +33,4 @@ map("n", "<C-g>", ':! git add % <cr><cr>')
 map("n", "<leader><left>", '<C-w>h')
 map("n", "<leader><right>", '<C-w>l')
 -- Main
-map("n", "v", "<C-v>") -- this will remap v to start visual block
+map("n", "<leader>v", "<C-v>") -- this will remap v to start visual block
