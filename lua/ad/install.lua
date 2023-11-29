@@ -13,7 +13,7 @@ if ispackerempty then
 		"https://github.com/wbthomason/packer.nvim",
 		install_path,
 	})
-	require('ad/packer')
+	require('ad.packer')
 	cmd [[PackerInstall]]
 	return false
 end
