@@ -4,7 +4,10 @@ if not status or not val then
     print("Instalation has failed!")
     return false
 end
-require('mason').setup()
+local status, val = pcall(require, 'mason')
+if status and val then
+    require('mason').setup()
+end
 vim.lsp.enable('luals')
 require('ad.settings')
 require('ad.remap')
