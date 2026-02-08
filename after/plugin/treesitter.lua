@@ -1,5 +1,8 @@
-local nvim_treesitter = require('nvim-treesitter.configs')
-nvim_treesitter.setup {
+require("nvim-treesitter").setup {
+  -- Directory to install parsers and queries to (prepended to `runtimepath` to have priority)
+  install_dir = vim.fn.stdpath('data') .. '/site'
+}
+local properties = {
   -- A list of parser names, or "all"
   ensure_installed = { "python", "c", "lua"},
 
@@ -21,3 +24,4 @@ nvim_treesitter.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+require("nvim-treesitter").install(properties["ensure_install"])
