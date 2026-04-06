@@ -1,3 +1,7 @@
+local status, _ = pcall(require, 'rose-pine')
+if not status then
+    return nil
+end
 local o = vim.opt
 -- Highlight the region on yank
 vim.api.nvim_create_autocmd("TextYankPost", {

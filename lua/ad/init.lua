@@ -1,14 +1,11 @@
 require('ad.patch')
 local status, val = pcall(require, "ad/install")
 if not status or not val then
-    print("Instalation has failed!")
+    print("Init::Instalation has failed!")
     return false
 end
-local status, val = pcall(require, 'mason')
-if status and val then
-    require('mason').setup()
-end
 vim.lsp.enable('luals')
+vim.lsp.enable('clangd')
 require('ad.settings')
 require('ad.remap')
 require('ad.packer')

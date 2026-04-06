@@ -1,4 +1,8 @@
-require("nvim-treesitter").setup {
+local status, nvimtreesitter = pcall(require, 'nvim-treesitter')
+if not status then
+    return nil
+end
+nvimtreesitter.setup {
   -- Directory to install parsers and queries to (prepended to `runtimepath` to have priority)
   install_dir = vim.fn.stdpath('data') .. '/site'
 }
