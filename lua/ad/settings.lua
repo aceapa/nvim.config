@@ -2,6 +2,9 @@ local status, _ = pcall(require, 'rose-pine')
 if not status then
     return nil
 end
+local function set_colorscheme(theme)
+    vim.cmd.colorscheme(theme)
+end
 local o = vim.opt
 -- Highlight the region on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -12,7 +15,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 -- gui and colorscheme 
 --#region
-vim.cmd.colorscheme('rose-pine')
+local target_theme = 'rose-pine-moon'
+local status, _ = pcall(set_colorscheme, target_theme)
+local theme_default = 'tokyonight-moon'
+if status then
+    theme_default = target_theme
+end
+vim.cmd.colorscheme(theme_default)
 vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
 vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
 o.termguicolors = true
